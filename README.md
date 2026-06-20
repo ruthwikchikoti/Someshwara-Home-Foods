@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Someshwara Home Foods · సోమేశ్వర హోమ్ ఫుడ్స్
 
-## Getting Started
+A premium, bilingual website for **Someshwara Home Foods** — an authentic Telangana homemade-food brand from Boduppal, Hyderabad. Traditional family recipes, no preservatives, shipped across India.
 
-First, run the development server:
+> _"Pure Homemade Happiness" · "ఇంటి రుచితో స్వచ్ఛమైన ఆనందం"_
+
+The experience is designed to feel like **a grandmother's traditional Telangana kitchen meeting premium modern ecommerce** — a calm heritage palette of cream, deep maroon and muted gold, refined typography, and authentic food photography.
+
+---
+
+## ✨ Features
+
+- **Bilingual everywhere** — full English / తెలుగు toggle for all content, with proper Telugu typography (Noto Sans Telugu).
+- **WhatsApp cart ordering** — browse items, pick a weight (250g / 500g / 1kg / Bulk), add multiple products to a cart, and send the whole order in **one WhatsApp message**. The order message is always sent in **both English + Telugu**, regardless of the selected UI language.
+- **Filterable menu** — Pindi Vantalu, Pickles, Sweets, Non-Veg Pickles and Festival Specials, with best-seller badges and per-card quantity steppers.
+- **Dedicated sections** — Hero, Our Story, Menu, Pickles (veg & non-veg), Catering & Bulk orders (direct-call CTA), How It Works, Trust stats, and an Instagram-style Gallery.
+- **Direct contact** — sticky navbar, an always-available floating WhatsApp + Call button, and tap-to-call for catering/bulk enquiries.
+- **Lord Shiva (Someshwara) emblem** as the brand logo and favicon.
+
+## 🎨 Design
+
+- Heritage palette: cream `#faf5ec`, deep maroon `#6e1423`, muted gold `#a9823f`, leaf green accents.
+- Playfair Display headings + Inter body + Noto Sans Telugu, with subtle, tasteful motion (no clutter).
+- Authentic, appetizing food imagery for every dish.
+
+## 🔍 SEO & Performance
+
+- Metadata, canonical + hreflang (`en-IN` / `te-IN`), `sitemap.xml`, `robots.txt`, PWA `manifest`, branded favicon/apple-icon, and dynamic OpenGraph / Twitter share cards.
+- Rich **schema.org** structured data (`FoodEstablishment` + `Menu` + `OfferCatalog` + `Product` list) targeting Telangana homemade-food keywords.
+- `next/image` with AVIF/WebP, lazy loading and blur placeholders; mobile-first responsive layout.
+
+## 🛠️ Tech Stack
+
+| | |
+|---|---|
+| Framework | [Next.js 16](https://nextjs.org) (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Animation | Framer Motion |
+| Icons | lucide-react |
+
+## 🚀 Getting Started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # production build
+npm run start    # serve the production build
+npm run lint     # lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+src/
+  app/            # App Router pages, layout, metadata, sitemap/robots/manifest,
+                  # favicon/icons and OG images
+  components/     # UI sections (Hero, Menu, Pickles, Catering, Cart, Footer, …)
+  lib/
+    products.ts   # menu catalogue (bilingual names, categories, weights, images)
+    i18n.tsx      # English/Telugu strings + language context
+    cart.tsx      # cart state
+    site.ts       # contact details + WhatsApp message builders
+public/images/    # product, ambient and brand imagery
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📞 Contact
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Phone / WhatsApp:** 8897809289
+- **Instagram:** [@someshwara_homefoods_5342](https://www.instagram.com/someshwara_homefoods_5342/)
+- **Location:** Sai Maruthi Nagar, Boduppal, Hyderabad, Telangana
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<sub>No Preservatives. Only Traditional Taste. · ప్రిజర్వేటివ్స్ లేవు. అసలైన ఇంటి రుచి మాత్రమే.</sub>
