@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
+/* ============================================================
+   SOMESHWARA HOME FOODS — Calm Heritage design system
+   Clean cream canvas · deep maroon · muted gold accents
+   ============================================================ */
+
+@theme {
+  /* Brand palette — muted & refined */
+  --color-maroon: #6e1423;
+  --color-maroon-deep: #4d0d18;
+  --color-maroon-soft: #863040;
+  --color-gold: #a9823f;
+  --color-gold-light: #cdae72;
+  --color-gold-soft: #e3d2a6;
+  --color-cream: #faf5ec;
+  --color-cream-deep: #f1e7d4;
+  --color-surface: #fffdf8;
+  --color-ink: #2f2017;
+  --color-muted: #6f5e52;
+  --color-leaf: #5c6b40;
+  --color-leaf-deep: #45512f;
+  --color-line: #e7d8bd;
+
+  /* Muted aliases so existing utility names stay calm, not funky */
+  --color-turmeric: #c79a3e;
+  --color-turmeric-soft: #e3d2a6;
+  --color-pickle: #8a1d22;
+  --color-pickle-bright: #9e2a2a;
+
+  /* Fonts */
+  --font-display: var(--font-playfair), "Playfair Display", serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-telugu: var(--font-telugu), "Noto Sans Telugu", sans-serif;
+
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf5ec;
+  --foreground: #2f2017;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  scroll-margin-top: 88px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
+html,
 body {
+  max-width: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Never let media force horizontal scroll on small screens */
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+/* Telugu text font */
+.te,
+[lang="te"] {
+  font-family: var(--font-telugu);
+}
+
+/* ---------- Clean backgrounds ---------- */
+
+.bg-maroon-rich {
+  background: linear-gradient(165deg, #6e1423 0%, #571019 55%, #410b13 100%);
+  background-color: #4d0d18;
+}
+
+.section-alt {
+  background-color: #f4ecdc;
+}
+
+/* very soft, optional warmth — no busy patterns */
+.glow-top {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(169, 130, 63, 0.1) 0%, transparent 70%);
+}
+
+/* Thin decorative gold rule */
+.gold-rule {
+  height: 2px;
+  width: 64px;
+  background: linear-gradient(90deg, transparent, #a9823f, transparent);
+}
+
+::selection {
+  background: var(--color-gold-soft);
+  color: var(--color-maroon-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
